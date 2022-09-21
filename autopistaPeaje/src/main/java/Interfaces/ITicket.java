@@ -7,12 +7,10 @@ package Interfaces;
  *
  */
 
-public interface ITicket {
+public interface ITicket 
+{
 	
-	String registroTicketEntrada(int kmEntrada, int preciokm);
-	String registroTicketSalida(int kmSalida, int tarifa);
-	int calculoTarifaGeneral(); //Kilometros recorridos X precio por Kilometro
-	int calculoTarifaEspecial(); //(Kilometros recorridos X precio por Kilometro) * Num pasajeros del autobus
-	int calcularImporteDeSalida(int kmSalida);
+	public void registrarTicketEntrada();
+	public void registrarTicketSalida(int km);
 	
 }

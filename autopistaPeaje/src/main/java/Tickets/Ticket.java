@@ -1,5 +1,7 @@
 package Tickets;
 
+import java.util.Scanner;
+
 import Constantes.Constantes;
 import Interfaces.ITicket;
 
@@ -11,79 +13,26 @@ import Interfaces.ITicket;
  */
 public abstract class Ticket implements ITicket 
 {
-		
-	private int precioKilometro;
-	private final int kilometroEntrada;
-	private int kilometroSalida;
-	private double tarifa;
-	private final int precio;
-	
-	public Ticket(int precioKilometro, int kilometroEntrada, int kilometroSalida, double tarifa, int precio) 
+	Scanner scanner= new Scanner(System.in);	
+	protected int kmInicial;
+
+	public Ticket(int kmInicial) 
 	{
 		super();
-		this.precioKilometro = precioKilometro;
-		this.kilometroEntrada = kilometroEntrada;
-		this.kilometroSalida = kilometroSalida;
-		this.tarifa = tarifa;
-		this.precio = precio;
-	}
-
-	public int getPrecioKilometro() 
-	{
-		return precioKilometro;
-	}
-
-	public void setPrecioKilometro(int precioKilometro) 
-	{
-		this.precioKilometro = precioKilometro;
-	}
-
-	public int getKilometroEntrada() {
-		return kilometroEntrada;
-	}
-
-	public void setKilometroEntrada(int kilometroEntrada) 
-	{
-		this.kilometroEntrada = kilometroEntrada;
-	}
-
-	public int getKilometroSalida() 
-	{
-		return kilometroSalida;
-	}
-
-	public void setKilometroSalida(int kilometroSalida) 
-	{
-		this.kilometroSalida = kilometroSalida;
-	}
-
-	public double getTarifa() 
-	{
-		return tarifa;
-	}
-
-	public void setTarifa(double tarifa) 
-	{
-		this.tarifa = tarifa;
-	}
-
-	public int getPrecio() 
-	{
-		return precio;
-	}
-
-	public void setPrecio(int precio) 
-	{
-		this.precio = precio;
+		this.kmInicial = kmInicial;
 	}
 	
 	
-	public String registroTicketEntrada(int kmEntrada, int preciokm) 
+	public void registrarTicketEntrada() 
 	{
-		return "Se ha creado el ticket (kmEntrada:"+kmEntrada+" Precio"+Constantes.getPrecioTarifaGeneral()+")";
+		System.out.println("Dame el kilometro de entrada ");
+		int km=Integer.parseInt(scanner.nextLine());
+		
+		System.out.println("Ticket creado: KilometrosIniciales: "+this.kmInicial+" Precio*Kilometro: "+Constantes.PRECIO_KM);
+		
 	}
 	
-	public abstract String registroTicketSalida(int kmSalida, int tarifa);
+	public abstract void registrarTicketSalida(int km);
 	
 	
 	
