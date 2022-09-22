@@ -2,13 +2,8 @@ package Constantes;
 
 public class Constantes 
 {
-	public final static int PRECIO_TARIFA_GENERAL=1;
-	public final static int PRECIO_KM=200;
-
-	public static int getPrecioTarifaGeneral() 
-	{
-		return PRECIO_TARIFA_GENERAL;
-	}
+	public static final int PRECIO_TARIFA_GENERAL=1;
+	public static final int PRECIO_KM=200;
 	
 	
 }
